@@ -1,0 +1,41 @@
+.batch_course
+{
+         background-color: darkblue;
+	padding-top: 35px;
+	padding-left : 30px;
+	padding-bottom: 10px;
+	width:1000px;
+	font-style:platino ;
+	color: white;
+	font-size: 30px;
+	margin: 0 auto;
+
+}
+.names
+{
+
+	color: rgb(88,20,53);
+	font-style: platino;
+
+	font-size: 40px;
+
+
+}
+hr {
+  border: 0;
+  background-color: #fff;
+  border-top: 1px dashed #8c8c8c;
+
+	width:1000px;
+
+}
+
+.batch
+{
+ background-color: lightsteelblue;
+	margin: 0 auto;
+}
+p
+{
+margin-left: 160px;
+}

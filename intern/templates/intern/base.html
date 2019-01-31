@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}CSPDCL{% endblock %}</title>
+    {% load staticfiles %}
+    <link rel="shortcut icon" type="image/png" href="{%  static 'cspdcl.ico' %}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'intern/navig.css' %}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+<header role="banner" id="fh5co-header">
+		<div class="fluid-container" >
+			<nav class="navbar navbar-inverse navbar-dropdown-top">
+					<div class="navbar-header"><a href="http://127.0.0.1:8000/home/" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><img src="{% static 'intern/images/logo.jpeg' %}" height="50" width="100"  alt="CSPDCL"  ></a>
+
+
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+			</button></div>
+					<div id="navbar" class="navbar-collapse collapse" >
+
+
+
+				<ul class="nav navbar-nav navbar-right">
+
+					<li ><a href="{% url 'intern:home' %}" data-nav-section="home" ><span class="glyphicon glyphicon-home"></span> Home</a></li>
+
+
+
+							 <li  ><a href="#"  ><span class="glyphicon glyphicon-education"></span> Courses</a>
+								 <ul >
+									  {% for courses in all_courses %}
+
+
+									 			<li class=><a href="#" style="font-family: 'Open Sans', sans-serif;">{{courses.Course}}</a>
+
+																			<ul class="sub" >
+																				{% for batch in all_batch %}
+																					{% with x=batch.Course.all y=courses.Course %}
+
+																								{% if y|slugify in x|slugify %}
+
+
+
+
+																									<li><a href="{% url 'intern:detail' courses.Course batch.Batch_No %}" style="font-family: 'Open Sans', sans-serif;">Batch {{ batch.Batch_No }}</a></li>
+
+
+																								{% endif %}
+
+																					{% endwith %}
+																				{% endfor %}
+																			</ul>
+												</li>
+									 {% endfor %}
+
+								 </ul>
+
+						     </li>
+
+
+						<li><a href="{% url 'intern:imggallery' %}"  data-nav-section="explore"><span class="glyphicon glyphicon-picture"></span> PhotoGallery</a></li>
+						<li><a href="{% url 'intern:career' %}"  data-nav-section="testimony"><span class="glyphicon glyphicon-briefcase"></span> Career</a></li>
+						<li><a href="{% url 'intern:contact' %}"  data-nav-section="testimony"><span class="glyphicon glyphicon-phone-alt"> </span> Contact&nbsp;&nbsp;</a></li>
+</ul>							</div>
+			</nav>
+	  </div>
+	</header>{% block body %}
+{% endblock %}
+</body>
+</html>

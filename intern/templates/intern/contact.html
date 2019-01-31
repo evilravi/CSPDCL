@@ -1,0 +1,43 @@
+{% extends 'intern/base.html' %}
+{% block body %}
+
+{% load staticfiles %}
+
+<head>
+
+	<title> Exploring Internships </title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Rammetto+One" rel="stylesheet"> 
+	<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+
+    
+</head>
+<body style="background-color:rgb(220,250,250)">
+
+		<section class="tm-section">
+            <div class="container-fluid">
+
+                <div class="row">
+                    {%for contact in all_contact%}
+
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+                        <div class="tm-content-box">
+                            <img src="{{contact.Image.url}}" alt="Image" class="tm-margin-b-20 img-fluid" width="275px" height="300px">
+                            <h4 class="tm-margin-b-20 tm-gold-text">Name - {{contact.Name}}</h4>
+							<h4 class="tm-margin-b-20 tm-gold-text">Designation - {{contact.Designation}}</h4>
+							<h4 class="tm-margin-b-20 tm-gold-text">Contact No - {{contact.Contact_No}}</h4>
+							<h4 class="tm-margin-b-20 tm-gold-text">Email - {{contact.Email}}</h4>
+                        </div>
+
+                    </div>
+                    {%endfor%}
+                   </div>
+            </div>
+        </section>
+
+		
+
+
+
+</body>
+{%endblock%}

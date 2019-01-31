@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}CSPDCL{% endblock %}</title>
+    {% load staticfiles %}
+    <link rel="shortcut icon" type="image/png" href="{%  static 'favicon.ico' %}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{% static 'intern/navi.css' %}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+<header role="banner" id="fh5co-header">
+		<div class="fluid-container" >
+			<nav class="navbar navbar-inverse navbar-fixed-top">
+					<div class="navbar-header"><a href="http://127.0.0.1:8000/home/" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><img src="{% static 'intern/images/logo.jpeg' %}" height="50" width="100"  alt="CSPDCL"  ></a>
+
+
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+			</button></div>
+					<div id="navbar" class="navbar-collapse collapse" >
+
+
+
+				<ul class="nav navbar-nav navbar-right">
+
+						<li ><a href="{% url 'intern:home' %}" data-nav-section="home" ><span>Home</span></a></li>
+
+
+
+							 <li ><a href="#"  ><span>Courses</span></a>
+
+								 <ul>
+
+									 <li > <a href="#" >Vocational Training</a>
+
+									 <ul>
+										 <li > <a href="#" >Diploma</a>
+										   <ul>
+                                         <li > <a href="http://127.0.0.1:8000/admin/intern/person/?Batch_No__Batch_No__exact=1&Course__Course__exact=Vocational+Training+Diploma" >Batch 1</a></li>
+										 <li > <a href="#" >Batch 2</a></li>
+										 <li > <a href="#" >Batch 3</a></li>
+									      </ul></li>
+										 <li > <a href="#" >Degree</a>
+										   <ul>
+                                         <li > <a href="#" >Batch 1</a></li>
+										 <li > <a href="#" >Batch 2</a></li>
+										 <li > <a href="#" >Batch 3</a></li>
+									 </ul></li>
+									 </ul>
+									 </li>
+									 <li ><a href="#">Institutional Training</a>
+									 <ul>
+   							             <li > <a href="#" >Assistant Engineer</a></li>
+										 <li > <a href="#" >Junior Engineer</a></li>
+									 </ul></li>
+									 <li ><a href="#">PSSC</a>
+									  <ul>
+                                         <li > <a href="#" >Lineman</a></li>
+										 <li > <a href="#" >Junior Engineer</a></li>
+									 </ul></li>
+									 <li ><a href="#">Regular LIne Main Training</a>
+									  <ul>
+                                         <li > <a href="#" >Batch 1</a></li>
+										 <li > <a href="#" >Batch 2</a></li>
+										 <li > <a href="#" >Batch 3</a></li>
+									 </ul></li>
+									 <li ><a href="#">Accounts Training</a>
+									 <ul>
+                                         <li > <a href="#" >Batch 1</a></li>
+										 <li > <a href="#" >Batch 2</a></li>
+										 <li > <a href="#" >Batch 3</a></li>
+									 </ul></li>
+									 <li ><a href="#">Management Development Program</a>
+									  <ul>
+                                        <li > <a href="#" >Batch 1</a></li>
+										 <li > <a href="#" >Batch 2</a></li>
+										 <li > <a href="#" >Batch 3</a></li>
+									 </ul></li>
+									 <li ><a href="#">Apprentice Training</a>
+
+									 <ul>
+                                         <li > <a href="#" >Diploma Apprentice</a></li>
+										 <li > <a href="#" >Degree Apprentice</a></li>
+									 </ul></li>
+								 </ul>
+
+						     </li>
+
+
+						<li><a href="{% url 'intern:home' %}"  data-nav-section="explore"><span>Photo Gallary</span></a></li>
+						<li><a href="#"  data-nav-section="testimony"><span>Career</span></a></li>
+						<li><a href="{% url 'intern:contact' %}"  data-nav-section="testimony"><span>Contact</span></a></li>
+						<li class="call-to-action"><a class="sign-up" href="http://127.0.0.1:8000/register/"><span>Sign Up</span></a></li>
+						<li class="call-to-action"><a class="log-in" href="http://127.0.0.1:8000/login_user/"><span>Login</span></a></li>
+</ul>							</div>
+			</nav>
+	  </div>
+	</header>{% block body %}
+{% endblock %}
+</body>
+</html>

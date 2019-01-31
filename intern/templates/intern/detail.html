@@ -1,0 +1,74 @@
+{% extends 'intern/base.html' %}
+{% load staticfiles %}
+{% block body %}
+
+
+    <link rel="stylesheet" href="{% static 'intern/cspdcl1.css' %}" type="text/css">
+<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'intern/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'intern/main.css' %}">
+<body style="background-color:rgb(220,200,180)">
+
+<div class="names" align="center">{{courses.Course}}/BATCH {{batch.Batch_No}}</div>
+
+<div class="table100 ver3 m-b-110">
+					<div class="table100-head">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column1">S.No</th>
+									<th class="cell100 column2">Name</th>
+									<th class="cell100 column3">Father Name</th>
+									<th class="cell100 column4">Date of Order Issue</th>
+									<th class="cell100 column5">Order Number</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+
+
+
+
+<div class="table100-body js-pscroll">
+						<table>
+							<tbody>
+
+    {% for person in batch.person_set.all %}
+
+    {% for person1 in courses.person_set.all %}
+            {% if person.id == person1.id %}
+        						<tr class="row100 body">
+                                    <td class="cell100 column1"></td>
+									<td class="cell100 column2"><a href="{% url 'intern:pdetail' person.id %}" style="color:white">{{ person.Name }}</a></td>
+									<td class="cell100 column3">{{ person.Father_Name }}</td>
+									<td class="cell100 column4">{{ person.Date_of_Order_Issue }}</td>
+									<td class="cell100 column5">{{ person.Order_No }}</td>
+								</tr>
+
+
+
+
+
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+					</tbody>
+						</table>
+					</div>
+				</div>
+
+
+
+</body>
+{% endblock %}
